@@ -1,0 +1,42 @@
+<div class="form-row" [formGroup]="configItemForm">
+  <div class="col mb-3">
+    <select
+      [id]="selectId"
+      name=""
+      class="custom-select"
+      formControlName="criterion"
+    >
+      <option *ngFor="let criterion of criteria" [value]="criterion.value">{{
+        criterion.text
+      }}</option>
+    </select>
+    <small class="form-text text-muted" *ngIf="index == 0"
+      >Select a criterion that publications shall match</small
+    >
+  </div>
+
+  <div class="col mb-3">
+    <input
+      [id]="inputId"
+      type="number"
+      [ngClass]="value.valid ? 'form-control' : 'form-control is-invalid'"
+      formControlName="value"
+    />
+    <div class="invalid-feedback" *ngIf="value.invalid && value.errors.max">
+      Value must be smaller than or equal to {{ max }}
+    </div>
+    <div class="invalid-feedback" *ngIf="value.invalid && value.errors.min">
+      Value must be larger than or equal to {{ min }}
+    </div>
+    <small class="form-text text-muted" *ngIf="index == 0"
+      >Enter how many matches shall be uploaded ({{ min }} &lt; amount &lt;=
+      {{ max }})</small
+    >
+  </div>
+
+  <div class="col-lg-1 col-sm-2 mb-3 text-right">
+    <button (click)="delete()" class="btn btn-outline-danger" type="button">
+      Delete
+    </button>
+  </div>
+</div>
