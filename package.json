@@ -14,7 +14,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "5gv-dto": "git+ssh://git@gitlab.irt.de/5g-victori/dto.git",
+    "5gv-dto": "git+ssh://git@github.com/IRT-Open-Source/5gv-dto.git",
     "@angular/animations": "^10.2.3",
     "@angular/common": "^10.2.3",
     "@angular/compiler": "^10.2.3",
