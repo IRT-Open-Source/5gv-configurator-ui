@@ -45,10 +45,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 With following command you can build a [docker image](https://www.docker.com) for this service. But again, typically you use the startup script `up.sh` of the [Platform](../../../5gv-platform) project to do the job.
 
 ```bash
-$ DOCKER_BUILDKIT=1 docker build --ssh gitlab="$HOME/.ssh/<<your_private_key_name>>" -t configurator-ui .
+$ docker build -t configurator-ui .
 ```
-
-Replace `<<your_private_key_name>>` by the name of the private key used to authenticate at the repository.
 
 **Web server**:
 
